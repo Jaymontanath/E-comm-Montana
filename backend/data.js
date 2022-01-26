@@ -17,7 +17,6 @@ const data = {
   ],
   products: [
     {
-      _id: "1",
       name: "OLIVA V PACK 5",
       category: "Cigars",
       image: "/images/p-1.png",
@@ -29,7 +28,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "2",
       name: "Montana LE AMI pack 10",
       category: "Cigars",
       image: "/images/p-2.jpeg",
@@ -41,7 +39,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "3",
       name: "LA GLORIA CUBANA",
       category: "Cigars",
       image: "/images/p-3.jpeg",
@@ -53,7 +50,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "4",
       name: "La Gloria Cubana Esteli",
       category: "Cigars",
       image: "/images/p-4.png",
@@ -65,7 +61,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "5",
       name: "Baccarat Nicaragua",
       category: "Cigars",
       image: "/images/p-5.jpeg",
@@ -77,7 +72,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "6",
       name: "601 Blue Label Maduro",
       category: "Cigars",
       image: "/images/p-6.png",
