@@ -26,7 +26,7 @@ function App() {
         <header className="row">
           <div>
             <Link className="brand" to="/">
-              MONTANA CO.LTD
+              Montana Cigars Co.Ltd
             </Link>
           </div>
           <div>
@@ -39,13 +39,14 @@ function App() {
             {userInfo ? (
               <div className="dropdown">
                 <Link to="#">
-                  {" "}
-                  {userInfo.name} <i className="fa fa-caret-down"></i>
+                  {userInfo.name} <i className="fa fa-caret-down"></i>{" "}
                 </Link>
                 <ul className="dropdown-content">
-                  <Link to="#signout" onClick={signoutHandler}>
-                    Sign out
-                  </Link>
+                  <li>
+                    <Link to="#signout" onClick={signoutHandler}>
+                      Sign Out
+                    </Link>
+                  </li>
                 </ul>
               </div>
             ) : (
@@ -59,8 +60,8 @@ function App() {
           <Route path="/signin" component={SigninScreen}></Route>
           <Route path="/register" component={RegisterScreen}></Route>
           <Route path="/shipping" component={ShippingAddressScreen}></Route>
-          <Route path="/placeorder" component={PlaceOrderScreen}></Route>
           <Route path="/payment" component={PaymentMethodScreen}></Route>
+          <Route path="/placeorder" component={PlaceOrderScreen}></Route>
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
         <footer className="row center">All right reserved</footer>

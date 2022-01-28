@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema(
   {
-    //collecting order info to mongooseDB //
     orderItems: [
       {
         name: { type: String, required: true },
