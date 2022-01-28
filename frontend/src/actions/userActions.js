@@ -47,9 +47,10 @@ export const signin = (email, password) => async (dispatch) => {
     });
   }
 };
-
+// log out and remove the data //
 export const signout = () => (dispatch) => {
   localStorage.removeItem("userInfo");
   localStorage.removeItem("cartItems");
+  localStorage.removeItem("ShippingAddress");
   dispatch({ type: USER_SIGNOUT });
 };
