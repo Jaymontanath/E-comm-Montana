@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import { signout } from "./actions/userActions";
+import AdminRoute from "./components/AdminRoute";
 import PrivateRoute from "./components/PrivateRoute";
 import CartScreen from "./screens/CartScreen";
 import HomeScreen from "./screens/HomeScreen";
@@ -9,6 +10,7 @@ import OrderHistoryScreen from "./screens/OrderHistoryScreen";
 import OrderScreen from "./screens/OrderScreen";
 import PaymentMethodScreen from "./screens/PaymentMethodScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import ProductListScreen from "./screens/ProductListScreen";
 import ProductScreen from "./screens/ProductScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import RegisterScreen from "./screens/RegisterScreen.js";
@@ -30,7 +32,7 @@ function App() {
         <header className="row">
           <div>
             <Link className="brand" to="/">
-              Montana.Co.Ltd
+              Montana
             </Link>
           </div>
           <div>
@@ -40,7 +42,8 @@ function App() {
                 <span className="badge">{cartItems.length}</span>
               )}
             </Link>
-            {userInfo ? (
+
+            {userInfo ? ( //basic user function //
               <div className="dropdown">
                 <Link to="#">
                   {userInfo.name} <i className="fa fa-caret-down"></i>{" "}
@@ -62,27 +65,28 @@ function App() {
             ) : (
               <Link to="/signin">Sign In</Link>
             )}
-            {userInfo && userInfo.isAdmin && (
-              <div className="dropdown">
-                <Link to="#admin">
-                  Admin <i className="fa fa-caret-down"></i>
-                </Link>
-                <ul className="dropdown-content">
-                  <li>
-                    <Link to="/dashboard">Dashboard</Link>
-                  </li>
-                  <li>
-                    <Link to="/productlist">Products</Link>
-                  </li>
-                  <li>
-                    <Link to="/orderlist">Orders</Link>
-                  </li>
-                  <li>
-                    <Link to="/userlist">Users</Link>
-                  </li>
-                </ul>
-              </div>
-            )}
+            {userInfo &&
+              userInfo.isAdmin && ( //admin authority what admin can do. //
+                <div className="dropdown">
+                  <Link to="#admin">
+                    Admin <i className="fa fa-caret-down"></i>
+                  </Link>
+                  <ul className="dropdown-content">
+                    <li>
+                      <Link to="/dashboard">Dashboard</Link>
+                    </li>
+                    <li>
+                      <Link to="/productlist">Products</Link>
+                    </li>
+                    <li>
+                      <Link to="/orderlist">Orders</Link>
+                    </li>
+                    <li>
+                      <Link to="/userlist">Users</Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
           </div>
         </header>
         <main>
@@ -99,6 +103,10 @@ function App() {
             path="/profile"
             component={ProfileScreen}
           ></PrivateRoute>
+          <AdminRoute
+            path="/productlist"
+            component={ProductListScreen}
+          ></AdminRoute>
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
         <footer className="row center">All right reserved</footer>
